@@ -70,6 +70,8 @@ export default function DrawerAppBar(props: Props) {
           maxHeight: "100px",
           display: "flex",
           justifyContent: "space-between",
+          position: 'sticky',
+          top: '0'
         }}
       >
         <Toolbar>
