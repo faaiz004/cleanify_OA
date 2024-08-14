@@ -3,8 +3,10 @@ import { buttonStyle, imageContainer, mainTextStyle, root, secondaryTextStyle, t
 import { Button, Typography } from '@mui/material';
 import { Img } from 'react-image';
 import GrabageCollection from '../../assets/GarbageCollection.svg';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <Box sx = {root}>
       <Box sx = {textAndImageContainer}>
@@ -29,7 +31,7 @@ export default function Home() {
               marginTop: '10px',
             }}
           >
-          <Button sx = {buttonStyle}>
+          <Button sx = {buttonStyle} onClick={() => navigate('/register')}>
             Join Us Now!
           </Button>
           </Box>

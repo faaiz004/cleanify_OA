@@ -11,6 +11,7 @@ import Navbar from "../layout/Navbar/Index";
 
 // Lazy load the components
 const Home = lazy(() => import("../pages/Home/Index"));
+const Register = lazy(() => import("../pages/Register/Index"));
 
 const NavbarLayout: React.FC = () => {
   return (
@@ -31,6 +32,14 @@ export default function RouterComponent() {
             element={
               <Suspense fallback={<div>...Loading</div>}>
                 <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <Suspense fallback={<div>...Loading</div>}>
+                <Register />
               </Suspense>
             }
           />

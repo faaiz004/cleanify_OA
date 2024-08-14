@@ -24,7 +24,7 @@ export const RegisterButtonStyle: SxProps<Theme> = {
     color: 'white',
     backgroundColor: 'primary.main',
     '&:hover': {
-        backgroundColor: 'primary.dark',
+        backgroundColor: 'primary.main',
     }
 }
 
