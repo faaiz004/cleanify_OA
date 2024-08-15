@@ -21,13 +21,17 @@ To run the application locally, follow these steps:
 
 1. Clone the repository to your local machine using the following command:
 ```
-git clone <repo link>
+git clone https://github.com/faaiz004/cleanify
 ```
-2. Install the required dependencies by running the following command:
+2. Navigate to the project directory by running the following command:
+```
+cd cleanify
+```
+3. Install the required dependencies by running the following command:
 ```
 npm install
 ```
-3. Start the development server by running the following command:
+4. Start the development server by running the following command:
 ```
 npm run dev
 ```
