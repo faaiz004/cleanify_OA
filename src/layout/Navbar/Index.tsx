@@ -15,6 +15,7 @@ import Button from "@mui/material/Button";
 import Cleanify from "../../assets/Cleanify.svg";
 import { Img } from "react-image";
 import { ButtonTextStyle, RegisterButtonStyle, SignInButtonStyle } from "./Styles";
+import { useNavigate } from "react-router-dom";
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -27,12 +28,29 @@ const drawerWidth = 240;
 const navItems = ["About Us", "Register", "Sign in"];
 
 export default function DrawerAppBar(props: Props) {
+  const navigate = useNavigate();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const handleClick = (item: string) => {
+    switch (item) {
+      case "About Us":
+        navigate('/aboutus');
+        break;
+      case "Register":
+        navigate('/register');
+        break;
+      case "Sign in":
+        navigate('/signin');
+        break;
+      default:
+        break;
+    }
+  }
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -42,13 +60,15 @@ export default function DrawerAppBar(props: Props) {
              width: "100%",
             }}
           >
-            <img src={Cleanify} alt="Cleanify" style={{ height: "100%", fontSize: '40px' }} />
+            <img src={Cleanify} alt="Cleanify" style={{ height: "100%", fontSize: '40px', cursor: 'pointer' }} onClick={() => {
+              navigate('/');
+            }} />
           </Box>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center", color: 'secondary.main' }}>
+            <ListItemButton sx={{ textAlign: "center", color: 'secondary.main' }} onClick = {() => handleClick(item)}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -70,6 +90,8 @@ export default function DrawerAppBar(props: Props) {
           maxHeight: "100px",
           display: "flex",
           justifyContent: "space-between",
+          position: 'sticky',
+          top: 0,
         }}
       >
         <Toolbar>
@@ -99,16 +121,17 @@ export default function DrawerAppBar(props: Props) {
               src={Cleanify}
               alt="Cleanify"
               loader={<div>...loading</div>}
-              style={{ height: "100%" }}
+              style={{ height: "100%", cursor: 'pointer' }}
+              onClick={() => navigate('/')}
             />
           </Box>
           <Box sx={{ display: { xs: "none", sm: "flex" }, marginRight: '40px', gap: {
             sm: '10px',
             md: '20px',
           }, alignItems: 'center' }}>
-                <Button sx = {ButtonTextStyle}>About Us</Button>
-                <Button sx={RegisterButtonStyle}>Register</Button>
-                <Button sx={SignInButtonStyle}>Sign in</Button>
+                <Button sx = {ButtonTextStyle} onClick={() => navigate('/aboutus')}>About Us</Button>
+                <Button sx={RegisterButtonStyle} onClick={() => navigate('/register')}>Register</Button>
+                <Button sx={SignInButtonStyle} onClick={() => navigate('/signin')}>Sign in</Button>
           </Box>
         </Toolbar>
       </AppBar>

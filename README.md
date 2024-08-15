@@ -1,50 +1,38 @@
-# React + TypeScript + Vite
+Cleanify Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This project is a web application built using React and Material-UI (MUI) that focuses on improving waste management through AI-driven solutions. The application includes multiple pages, each designed to showcase specific features of the Cleanify service, along with a register and login page for users to access the application. The application also includes a home page, the page users see when they first visit the site.
 
-Currently, two official plugins are available:
+## pages
+About Us: The "About Us" page provides an overview of Cleanify's mission and vision. It highlights the company's commitment to leveraging technology for sustainable waste management solutions and supporting the communities and workers who keep cities clean.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Register Page: The register page allows users to create an account by entering their email address and password. The page includes a form with input fields for email and password, along with a submit button to create the account. It also includes a link to the login page for existing users and has error handling for invalid inputs.
 
-## Expanding the ESLint configuration
+Login Page: The login page allows users to access their account by entering their email address and password. The page includes a form with input fields for email and password, along with a submit button to log in. It also includes a link to the register page for new users and has error handling for invalid inputs.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Home Page: The home page is the first page users see when they visit the site. It includes a brief description of the Cleanify service and a call-to-action button to register or log in. The page also includes a carousel of images showcasing the different features of the service.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Responsive Design
+The application is designed to be responsive and accessible on a variety of devices, including desktops, tablets, and smartphones. The layout and styling of the pages adjust dynamically based on the screen size, ensuring a consistent user experience across different devices. The application also includes accessibility features such as alt text for images and keyboard navigation for users who rely on screen readers or keyboard input.
+
+## Installation
+To run the application locally, follow these steps:
+
+1. Clone the repository to your local machine using the following command:
+```
+git clone <repo link>
+```
+2. Install the required dependencies by running the following command:
+```
+npm install
+```
+3. Start the development server by running the following command:
+```
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+
