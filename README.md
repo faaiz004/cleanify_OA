@@ -21,7 +21,7 @@ To run the application locally, follow these steps:
 
 1. Clone the repository to your local machine using the following command:
 ```
-git clone https://github.com/faaiz004/cleanify
+git clone https://github.com/faaiz004/cleanify_OA
 ```
 2. Navigate to the project directory by running the following command:
 ```
